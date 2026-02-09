@@ -118,7 +118,7 @@ button:disabled {
         max-width: 100%;
         min-height: 100vh;
         margin: 0;
-        padding: 20px 16px 32px;
+        padding: 20px 16px 110px;
         border-radius: 0;
         box-shadow: none;
     }
@@ -144,6 +144,7 @@ button:disabled {
     #feedback {
         font-size: 16px;
         padding: 18px;
+        margin-bottom: 24px;
     }
 
     button {
