@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Cuestionario Estructuras de Tracción</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Quiz FADU – Estructuras</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <div class="quiz-container">
-    <h2 id="contador"></h2>
-    <h2 id="pregunta"></h2>
-    <div id="opciones"></div>
+<div class="container">
+    <h1>Cuestionario de Estructuras</h1>
 
-    <button id="siguiente" disabled>Siguiente</button>
-    <button id="reiniciar" style="display:none;">Volver a intentar</button>
-  </div>
+    <div id="quiz">
+        <p id="question"></p>
+        <div id="answers"></div>
+        <div id="feedback"></div>
+        <button id="nextBtn" disabled>Siguiente</button>
+    </div>
 
-  <script src="script.js"></script>
+    <div id="result" class="hidden">
+        <h2 id="score"></h2>
+        <button onclick="restartQuiz()">Volver a intentar</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
