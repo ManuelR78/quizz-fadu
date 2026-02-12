@@ -1,209 +1,205 @@
 const questions = [
-    {
-        question: "Una barra estructural ideal trabaja principalmente a:",
-        answers: ["Flexión", "Corte", "Esfuerzos axiales", "Torsión"],
-        correct: "Esfuerzos axiales",
-        explanation: "Las barras no están pensadas para resistir momentos ni corte. Una barra ideal trabaja a tracción o compresión, es decir, esfuerzos axiales."
-    },
-    {
-        question: "La tracción se produce cuando:",
-        answers: [
-            "La carga es perpendicular al eje",
-            "El elemento se curva",
-            "Las fuerzas tiran alineadas con el eje",
-            "Aparece pandeo"
-        ],
-        correct: "Las fuerzas tiran alineadas con el eje",
-        explanation: "La curvatura y el pandeo no corresponden a tracción. La tracción aparece cuando las fuerzas estiran el elemento en la dirección de su eje."
-    },
-    {
-        question: "La deformación característica de la tracción es:",
-        answers: ["Curvatura", "Acortamiento", "Alargamiento", "Pandeo"],
-        correct: "Alargamiento",
-        explanation: "Curvatura y pandeo corresponden a flexión o compresión. En tracción el elemento se alarga."
-    },
-    {
-        question: "En un elemento sometido solo a tracción:",
-        answers: [
-            "Existe eje neutro",
-            "Algunas fibras se comprimen",
-            "Todas las fibras se traccionan",
-            "Aparece flexión"
-        ],
-        correct: "Todas las fibras se traccionan",
-        explanation: "El eje neutro solo existe cuando hay tracción y compresión juntas. En tracción pura, todas las fibras trabajan traccionadas."
-    },
-    {
-        question: "La flexión aparece cuando:",
-        answers: [
-            "La carga es paralela al eje",
-            "La carga es perpendicular al eje",
-            "El elemento solo se estira",
-            "No hay deformación"
-        ],
-        correct: "La carga es perpendicular al eje",
-        explanation: "Las cargas paralelas generan tracción o compresión. La flexión se produce por cargas perpendiculares al eje."
-    },
-    {
-        question: "En flexión simple se producen:",
-        answers: [
-            "Solo compresión",
-            "Solo tracción",
-            "Tracción y compresión simultáneamente",
-            "Solo corte"
-        ],
-        correct: "Tracción y compresión simultáneamente",
-        explanation: "La flexión nunca es un esfuerzo único: una parte del elemento se comprime y otra se tracciona."
-    },
-    {
-        question: "El eje neutro se caracteriza por:",
-        answers: [
-            "Máxima tracción",
-            "Máxima compresión",
-            "Tensión nula",
-            "Máxima deformación"
-        ],
-        correct: "Tensión nula",
-        explanation: "El eje neutro no trabaja estructuralmente. En él la tensión es igual a cero."
-    },
-    {
-        question: "Las tensiones máximas en flexión se producen:",
-        answers: [
-            "En el eje neutro",
-            "En el centro de la sección",
-            "En las fibras extremas",
-            "En los apoyos"
-        ],
-        correct: "En las fibras extremas",
-        explanation: "Cerca del eje neutro las tensiones son menores. Las fibras más alejadas son las más exigidas."
-    },
-    {
-        question: "El par interno en flexión sirve para:",
-        answers: [
-            "Generar deformación",
-            "Aumentar flecha",
-            "Oponerse al par externo",
-            "Producir rotura"
-        ],
-        correct: "Oponerse al par externo",
-        explanation: "El par interno equilibra el efecto de las cargas externas, no daña la estructura."
-    },
-    {
-        question: "En una viga simplemente apoyada con carga distribuida:",
-        answers: [
-            "El momento máximo está en los apoyos",
-            "El momento máximo está en el centro",
-            "El corte es nulo en los apoyos",
-            "No hay flexión"
-        ],
-        correct: "El momento máximo está en el centro",
-        explanation: "En los apoyos el momento suele ser cero. El máximo momento aparece en el centro del tramo."
-    },
-    {
-        question: "Una estructura de compresión dominante se define porque:",
-        answers: [
-            "Tiene gran inercia",
-            "No aparecen tracciones",
-            "Trabaja a flexión",
-            "Es hiperestática"
-        ],
-        correct: "No aparecen tracciones",
-        explanation: "La clave no es la forma sino el tipo de esfuerzo: todo el sistema trabaja comprimido."
-    },
-    {
-        question: "El pandeo es un fenómeno asociado a:",
-        answers: ["Tracción", "Corte", "Compresión", "Torsión"],
-        correct: "Compresión",
-        explanation: "El pandeo no ocurre en elementos estirados, es una inestabilidad típica de la compresión."
-    },
-    {
-        question: "El pandeo depende principalmente de:",
-        answers: [
-            "El peso propio",
-            "La esbeltez",
-            "El color del material",
-            "El tipo de carga"
-        ],
-        correct: "La esbeltez",
-        explanation: "No depende solo de la carga aplicada. Cuanto más esbelto el elemento, mayor riesgo de pandeo."
-    },
-    {
-        question: "Si la carga no pasa por el centro de gravedad:",
-        answers: [
-            "Aparece tracción pura",
-            "Aparece corte",
-            "Aparece flexión por excentricidad",
-            "No pasa nada"
-        ],
-        correct: "Aparece flexión por excentricidad",
-        explanation: "Toda excentricidad genera momento y por lo tanto flexión adicional."
-    },
-    {
-        question: "El núcleo central de una sección indica:",
-        answers: [
-            "Zona más resistente",
-            "Centro geométrico",
-            "Área donde debe pasar la carga para evitar tracción",
-            "Eje neutro"
-        ],
-        correct: "Área donde debe pasar la carga para evitar tracción",
-        explanation: "No es lo mismo que el eje neutro. Si la carga pasa por el núcleo, no aparecen tracciones."
-    },
-    {
-        question: "En un sistema reticulado ideal las cargas se aplican:",
-        answers: [
-            "En las barras",
-            "En cualquier punto",
-            "En los nudos",
-            "En las diagonales"
-        ],
-        correct: "En los nudos",
-        explanation: "Cargar una barra genera flexión. En un sistema ideal las cargas van a los nudos."
-    },
-    {
-        question: "Si una carga se aplica en el medio de una barra:",
-        answers: [
-            "Trabaja solo axial",
-            "Aparece flexión",
-            "No se transmite",
-            "Se elimina el esfuerzo"
-        ],
-        correct: "Aparece flexión",
-        explanation: "La barra deja de ser ideal. La carga fuera del nudo genera momento flector."
-    },
-    {
-        question: "El triángulo es fundamental en estructuras de barras porque:",
-        answers: [
-            "Reduce peso",
-            "Es indeformable geométricamente",
-            "Aumenta rigidez del material",
-            "Elimina esfuerzos"
-        ],
-        correct: "Es indeformable geométricamente",
-        explanation: "Es un tema geométrico, no material. El triángulo no se deforma sin cambiar la longitud de sus lados."
-    },
-    {
-        question: "Los cables solo trabajan a tracción porque:",
-        answers: [
-            "Son livianos",
-            "No resisten compresión",
-            "Tienen gran inercia",
-            "Son rígidos"
-        ],
-        correct: "No resisten compresión",
-        explanation: "Los cables son flexibles. Ante compresión se aflojan y no resisten carga."
-    },
-    {
-        question: "¿Qué elementos trabajan principalmente a flexión?",
-        answers: ["Tensores", "Columnas", "Vigas y losas", "Cables"],
-        correct: "Vigas y losas",
-        explanation: "Tensores y cables trabajan a tracción. Vigas y losas reciben cargas perpendiculares a su eje."
-    }
+{
+question: "¿Qué es una barra estructural sometida a cargas axiales?",
+answers: [
+"Un elemento macizo de gran espesor",
+"Un elemento cuya longitud es mucho mayor que su sección transversal y que trabaja bajo cargas normales axiales aplicadas perpendicularmente a su sección en los extremos",
+"Un elemento que trabaja principalmente a flexión"
+],
+correct: 1,
+explanation: "Trabaja con fuerzas aplicadas perpendicularmente a la sección transversal, generando tensión normal axial (σ). A no define comportamiento mecánico. C describe una viga."
+},
+{
+question: "¿Dónde se aplican idealmente las cargas verticales puntuales en un sistema reticulado plano?",
+answers: [
+"En el centro de cada barra",
+"En los nudos, como fuerzas concentradas verticales aplicadas en las articulaciones",
+"A lo largo de toda la barra como carga distribuida"
+],
+correct: 1,
+explanation: "En los nudos se evitan momentos flectores. Aplicarlas en barras generaría flexión."
+},
+{
+question: "Cuando una barra está sometida a una carga axial de tracción:",
+answers: [
+"Se acorta",
+"Se alarga debido a una tensión normal axial de tracción (σ > 0)",
+"Trabaja principalmente a tensión tangencial"
+],
+correct: 1,
+explanation: "La tracción genera alargamiento y tensión normal positiva. Acortamiento corresponde a compresión."
+},
+{
+question: "Cuando una barra está sometida a compresión axial centrada:",
+answers: [
+"Se alarga",
+"Se acorta generando tensión normal de compresión (σ < 0)",
+"Solo trabaja a corte"
+],
+correct: 1,
+explanation: "La compresión produce acortamiento y tensión negativa."
+},
+{
+question: "El principio de triangulación permite que:",
+answers: [
+"Las barras trabajen a torsión",
+"El sistema mantenga estabilidad geométrica sin variar la longitud de las barras",
+"Se generen momentos flectores predominantes"
+],
+correct: 1,
+explanation: "El triángulo es geométricamente indeformable."
+},
+{
+question: "Si una carga puntual vertical se aplica en el punto medio de una barra:",
+answers: [
+"La barra sigue trabajando solo axialmente",
+"Se generan momentos flectores y tensiones normales variables en la sección",
+"No se transmite carga"
+],
+correct: 1,
+explanation: "Aparece flexión debido a la excentricidad."
+},
+{
+question: "En un reticulado ideal, los nudos se consideran:",
+answers: [
+"Rígidos transmitiendo momento",
+"Articulados transmitiendo únicamente fuerzas axiales",
+"Empotrados"
+],
+correct: 1,
+explanation: "Los nudos ideales transmiten solo fuerzas axiales."
+},
+{
+question: "La eficiencia estructural del reticulado se debe a que:",
+answers: [
+"Minimiza tensiones tangenciales",
+"Minimiza momentos flectores y privilegia esfuerzos normales axiales",
+"Aumenta la deformación"
+],
+correct: 1,
+explanation: "Trabajar axialmente es más eficiente estructuralmente."
+},
+{
+question: "Una barra sometida a compresión axial puede fallar por:",
+answers: [
+"Tracción longitudinal",
+"Pandeo lateral por inestabilidad",
+"Corte puro inmediato"
+],
+correct: 1,
+explanation: "El pandeo es el modo típico de falla en compresión."
+},
+{
+question: "En una barra sometida a flexión:",
+answers: [
+"Toda la sección trabaja solo a compresión",
+"Una parte trabaja a tracción y otra a compresión",
+"Solo aparecen tensiones tangenciales"
+],
+correct: 1,
+explanation: "En flexión las tensiones varían linealmente entre tracción y compresión."
+},
+{
+question: "En un reticulado sometido a carga vertical uniforme:",
+answers: [
+"Las diagonales pueden trabajar a tracción o compresión",
+"Todas las barras trabajan igual",
+"Solo los apoyos resisten"
+],
+correct: 0,
+explanation: "Depende de su orientación y del flujo de cargas."
+},
+{
+question: "Una carga oblicua aplicada en un nudo genera:",
+answers: [
+"Solo tensión tangencial",
+"Componentes axiales normales según descomposición vectorial",
+"Solo torsión"
+],
+correct: 1,
+explanation: "La fuerza se descompone en ejes de las barras."
+},
+{
+question: "En una barra sometida exclusivamente a carga axial centrada:",
+answers: [
+"La tensión es uniforme en toda la sección",
+"La tensión varía linealmente",
+"Solo hay corte"
+],
+correct: 0,
+explanation: "No hay momento flector."
+},
+{
+question: "Si se elimina una diagonal esencial:",
+answers: [
+"El sistema puede volverse inestable",
+"No cambia nada",
+"Se transforma en losa"
+],
+correct: 0,
+explanation: "Se pierde la indeformabilidad geométrica."
+},
+{
+question: "En un reticulado espacial con cargas verticales concentradas:",
+answers: [
+"Las fuerzas se distribuyen tridimensionalmente en barras axiales",
+"Solo trabajan las horizontales",
+"Solo hay flexión"
+],
+correct: 0,
+explanation: "El sistema trabaja en 3D axialmente."
+},
+{
+question: "En una barra sometida a carga axial centrada:",
+answers: [
+"No aparece momento flector",
+"Aparece flexión obligatoria",
+"Aparece torsión"
+],
+correct: 0,
+explanation: "La carga centrada no genera momento."
+},
+{
+question: "Una carga vertical aplicada en el nudo superior:",
+answers: [
+"Se transmite axialmente hacia barras inclinadas y luego a los apoyos",
+"Se queda en la barra superior",
+"Genera únicamente corte"
+],
+correct: 0,
+explanation: "El flujo de cargas va hacia los apoyos."
+},
+{
+question: "Una barra sometida a tensión tangencial pura:",
+answers: [
+"Trabaja axialmente",
+"Solo trabaja a tracción",
+"Presenta deformación angular por esfuerzo cortante (τ)"
+],
+correct: 2,
+explanation: "El corte genera distorsión angular."
+},
+{
+question: "Una estereoestructura sometida a cargas distribuidas:",
+answers: [
+"Trabaja mediante descomposición tridimensional de fuerzas axiales",
+"Funciona como losa maciza",
+"No requiere triangulación"
+],
+correct: 0,
+explanation: "Mantiene principio axial en 3D."
+},
+{
+question: "Diferencia entre viga y barra reticulada:",
+answers: [
+"La viga trabaja principalmente a flexión (σ variable), la barra a tensión normal axial (σ uniforme)",
+"Ambas trabajan igual",
+"La barra trabaja más a corte"
+],
+correct: 0,
+explanation: "La viga resiste por flexión; la barra ideal trabaja axialmente."
+}
 ];
-
-// ===============================
-// LÓGICA DEL QUIZ
-// ===============================
 
 let current = 0;
 let score = 0;
@@ -216,80 +212,73 @@ const resultEl = document.getElementById("result");
 const scoreEl = document.getElementById("score");
 const quizEl = document.getElementById("quiz");
 
-// Mezclar preguntas
 shuffle(questions);
 loadQuestion();
 
 function loadQuestion() {
-    nextBtn.disabled = true;
-    feedbackEl.classList.add("hidden");
-    answersEl.innerHTML = "";
+nextBtn.disabled = true;
+feedbackEl.classList.add("hidden");
+answersEl.innerHTML = "";
 
-    const q = questions[current];
-    questionEl.textContent = `Pregunta ${current + 1} / ${questions.length}: ${q.question}`;
+const q = questions[current];
+questionEl.textContent = `Pregunta ${current+1} / ${questions.length}: ${q.question}`;
 
-    const shuffledAnswers = [...q.answers];
-    shuffle(shuffledAnswers);
+const shuffled = q.answers.map((a,i)=>({text:a,index:i}));
+shuffle(shuffled);
 
-    shuffledAnswers.forEach(answer => {
-        const btn = document.createElement("div");
-        btn.className = "answer";
-        btn.textContent = answer;
-        btn.onclick = () => selectAnswer(btn, answer);
-        answersEl.appendChild(btn);
-    });
+shuffled.forEach(option=>{
+const btn = document.createElement("div");
+btn.className="answer";
+btn.textContent=option.text;
+btn.onclick=()=>selectAnswer(btn, option.index);
+answersEl.appendChild(btn);
+});
 }
 
-function selectAnswer(button, answer) {
-    const q = questions[current];
-    const buttons = document.querySelectorAll(".answer");
+function selectAnswer(button,index){
+const q=questions[current];
+const buttons=document.querySelectorAll(".answer");
+buttons.forEach(b=>b.onclick=null);
 
-    buttons.forEach(b => b.onclick = null);
-
-    if (answer === q.correct) {
-        button.classList.add("correct");
-        score++;
-    } else {
-        button.classList.add("wrong");
-        buttons.forEach(b => {
-            if (b.textContent === q.correct) {
-                b.classList.add("correct");
-            }
-        });
-        feedbackEl.innerHTML = `<strong>Explicación:</strong> ${q.explanation}`;
-        feedbackEl.classList.remove("hidden");
-    }
-
-    nextBtn.disabled = false;
+if(index===q.correct){
+button.classList.add("correct");
+score++;
+}else{
+button.classList.add("wrong");
+buttons.forEach((b,i)=>{
+if(q.answers[q.correct]===b.textContent){
+b.classList.add("correct");
+}
+});
+feedbackEl.innerHTML=`<strong>Explicación:</strong> ${q.explanation}`;
+feedbackEl.classList.remove("hidden");
+}
+nextBtn.disabled=false;
 }
 
-nextBtn.onclick = () => {
-    current++;
-    if (current < questions.length) {
-        loadQuestion();
-    } else {
-        showResult();
-    }
+nextBtn.onclick=()=>{
+current++;
+if(current<questions.length){
+loadQuestion();
+}else{
+quizEl.classList.add("hidden");
+resultEl.classList.remove("hidden");
+scoreEl.textContent=`Resultado final: ${score} / ${questions.length}`;
+}
 };
 
-function showResult() {
-    quizEl.classList.add("hidden");
-    resultEl.classList.remove("hidden");
-    scoreEl.textContent = `Resultado final: ${score} / ${questions.length}`;
+function restartQuiz(){
+current=0;
+score=0;
+shuffle(questions);
+quizEl.classList.remove("hidden");
+resultEl.classList.add("hidden");
+loadQuestion();
 }
 
-function restartQuiz() {
-    current = 0;
-    score = 0;
-    shuffle(questions);
-    quizEl.classList.remove("hidden");
-    resultEl.classList.add("hidden");
-    loadQuestion();
+function shuffle(array){
+for(let i=array.length-1;i>0;i--){
+const j=Math.floor(Math.random()*(i+1));
+[array[i],array[j]]=[array[j],array[i]];
 }
-
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
 }
