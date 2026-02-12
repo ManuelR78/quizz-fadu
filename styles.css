@@ -1,0 +1,262 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 750px;
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 22px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+/* =========================
+   PANTALLA DE INICIO
+========================= */
+
+#startScreen {
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+/* Logo grande y protagonista */
+.logo {
+    width: 280px;
+    max-width: 85%;
+    margin-bottom: 35px;
+}
+
+/* Título principal */
+#startScreen h1 {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+/* Subtítulo */
+.subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #475569;
+    margin-bottom: 40px;
+}
+
+/* Botón inicio */
+#startScreen button {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 18px;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+    color: white;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#startScreen button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+}
+
+/* =========================
+   QUIZ
+========================= */
+
+/* Barra progreso */
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+/* Título quiz */
+h1 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 30px;
+    color: #0f172a;
+}
+
+/* Pregunta */
+#question {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #1e293b;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Respuestas */
+#answers {
+    display: grid;
+    gap: 14px;
+}
+
+.answer {
+    padding: 18px;
+    border-radius: 14px;
+    background: #f1f5f9;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-size: 16px;
+}
+
+.answer:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+/* Correcta */
+.answer.correct {
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #166534;
+    font-weight: 600;
+}
+
+/* Incorrecta */
+.answer.wrong {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #7f1d1d;
+}
+
+/* Feedback */
+#feedback {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 14px;
+    background: #fef9c3;
+    font-size: 15px;
+    line-height: 1.6;
+    display: none;
+}
+
+/* Botón siguiente */
+button {
+    margin-top: 30px;
+    padding: 16px;
+    width: 100%;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Resultado */
+#result h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        align-items: flex-start;
+    }
+
+    .container {
+        min-height: 100vh;
+        border-radius: 0;
+        padding: 30px 20px 120px;
+    }
+
+    .logo {
+        width: 320px;
+    }
+
+    #startScreen h1 {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    #question {
+        font-size: 24px;
+    }
+
+    .answer {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 18px;
+    }
+}
